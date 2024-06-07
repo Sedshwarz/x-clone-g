@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900;1000&display=swap');
+*{box-sizing: border-box; font-family: 'Poppins',sans-serif; padding: 0; margin: 0;}
+:root{--theme: #000000;}
+body{
+    background: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 85%;
+    gap: 100px;
+
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 400px;
+    padding: 15px 15px;
+    background: #e9e9d5;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0 0 27px rgba(0, 0, 0, 0.15);
+}
+
+.left textarea{
+    padding: 15px;
+    resize: none;
+    background-color: rgba(255, 235, 205, 0.568);
+    outline: none;
+    transition: 0.25s ease;
+    color: #2f2a38;
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+    width: 100%;
+}
+
+.left #file{display: none;}
+
+.left #fileLabel{
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 235, 205, 0.568);
+    color: #2c2d3b;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid gray;
+    transition: 0.25s ease;
+}
+.left #fileLabel:hover{
+    background: rgba(0, 0, 0, 0.025);
+}
+
+.left .themes{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+.themes::before{
+    content: "Tema";
+    position: absolute;
+    top: -8px;
+    left: 0; right: 0;
+    margin: auto;
+    color: #575757;
+    font-size: 15px;
+}
+
+.thmBtn{
+    margin-top: 20px;
+    width: 92.5px;
+    height: 45px;
+    border-radius: 35px;
+    transition: 0.25s ease;
+    background: var(--bg);
+    cursor: pointer;
+}
+
+.active{outline: 2px solid red;}
+
+.left #genrate{
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 235, 205, 0.568);
+    color: #2c2d3b;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid gray;
+    transition: 0.25s ease;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 400;
+}
+.left #genrate:hover{
+    background: rgba(0, 0, 0, 0.025);
+}
+
+.left input[type="color"]{
+    width: 100%;
+    height: 40px;
+}
+
+.emojiContainer{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.emojiContainer button{
+    border: 2px solid lightgray;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 23px;
+    background: beige;
+}
+.emojiContainer button:hover{
+    background: #f0f0db;
+}
+
+
+
+
+
+
+
+.right{
+    min-width: 670px;
+    max-width: 670px;/*
+    min-width: 670px;
+    max-height: 670px;*/
+    background-color: var(--theme);
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    width: 100%;
+}
+
+.top{
+    float: left;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+}
+.top div{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    color: #fff;
+}
+.top div span:nth-child(2){
+    color: #a8a8a8;
+    font-size: 13px;
+    margin-top: -2px;
+}
+
+#logo{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+#icerik{
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    float: left;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    outline: none;
+}
+
+#image{
+    max-height: 350px;
+    width: 600px;
+    border-radius: 20px;
+    border: 1px solid #3f3f3f;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+
+
+
+/* during sc*/
+
+.wrapper .right-sc{/*
+    min-height: 1080px;
+    max-height: 1080px;*/
+    min-width: 1080px;
+    max-width: 1080px;
+    padding: 50px 58px;
+    gap: 25px;
+}
+
+.wrapper .right-sc .top{
+    gap: 20px;
+    scale: 1.15;
+}
+
+.wrapper .right-sc .top div{
+    font-size: 28px;
+}
+.wrapper .right-sc .top div span:nth-child(2){
+    font-size: 22px;
+    margin-top: -3.5px;
+}
+
+.wrapper .right-sc #logo{
+    width: 96px;
+    height: 96px;
+}
+
+.wrapper .right-sc #icerik{
+    font-size: 42px; /*31px*/
+    line-height: 49px; /*41px*/
+    margin-top: 10px;
+}
+
+.wrapper .right-sc #image{
+    margin-top: 25px;
+    max-height: 610px;
+    width: 970px;
+}
+
+.wrapper .right-sc .fm-rt-bsp{
+    margin-left: -13px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    .wrapper{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        padding: 10px 7px 0 7px;
+    }
+
+    .left{
+        width: 100%;
+    }
+    .right{
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .right #image{
+        width: 100%;
+    }
+}
