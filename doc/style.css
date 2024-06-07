@@ -110,6 +110,8 @@ body{
 .left input[type="color"]{
     width: 100%;
     height: 40px;
+    border-radius: none;
+    -webkit-border-radius: none;
 }
 
 .emojiContainer{
