@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tweet Gönderi Oluşturucu</title>
+        <link rel="stylesheet" href="doc/style.css">
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <div class="left">
+                
+                <!--
+                    <label id="fileLabel" style="display:none" for="file">Dosya Yükle</label>
+                    <textarea id="content" placeholder="İçerik" oninput="changeContent()"></textarea>
+                    <div class="themes">
+                        <button class="thmBtn active" style="--bg: #000" onclick="setTheme(this,'#000')"></button>
+                        <button class="thmBtn" style="--bg: #101125" onclick="setTheme(this,'#101125')"></button>
+                        <button class="thmBtn" style="--bg: #1e2629" onclick="setTheme(this,'#1e2629')"></button>
+                        <button class="thmBtn" style="--bg: #101731" onclick="setTheme(this,'#101731')"></button>
+                    </div>
+                -->
+
+                
+                <div class="emojiContainer">
+                    <button onclick="addEmoji(this)">🚀</button>
+                    <button onclick="addEmoji(this)">💎</button>
+                    <button onclick="addEmoji(this)">🔥</button>
+                    <button onclick="addEmoji(this)">✔️</button>
+                    <button onclick="addEmoji(this)">💵</button>
+                    <button onclick="addEmoji(this)">⚖️</button>
+                    <button onclick="addEmoji(this)">🤝</button>
+                    <button onclick="addEmoji(this)">▶</button>
+                    <button onclick="addEmoji(this)">♦</button>
+                    <button onclick="addEmoji(this)">◼</button>
+                    <button onclick="addEmoji(this)">🏆</button>
+                    <button onclick="addEmoji(this)">👉</button>
+                    <button onclick="addEmoji(this)">🎯</button>
+                    <button onclick="addEmoji(this)">📌</button>
+                    <button onclick="addEmoji(this)">⚠️</button>
+                    <button onclick="addEmoji(this)">📈</button>
+                    <button onclick="addEmoji(this)">💪</button>
+                    <button onclick="addEmoji(this)">✨</button>
+                    <button onclick="addEmoji(this)">🤑</button>
+                    <button onclick="addEmoji(this)">💡</button>
+                    <button onclick="addEmoji(this)">📢</button>
+                    <button onclick="addEmoji(this)">💰</button>
+                    <button onclick="addEmoji(this)">❗</button>
+                    <button onclick="addEmoji(this)">✳️</button>
+                </div>
+                <input type="color" id="textClr" oninput="changeTextColor()" />
+                <input type="file" id="file" onChange="changeImage(this)">
+                <button id="genrate" onclick="generate()">Oluştur</button>
+            </div>
+
+            <div class="right">
+                <div class="head">
+                    <div class="top">
+                        <img src="" id="logo" alt="logo" crossorigin="anonymous">
+                        <div>
+                            <span>
+                                Finans <span class="fm-rt-bsp">Meclisi</span>
+                            </span>
+				            <span>@finansmeclisi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <span id="icerik" contenteditable>
+                    ✳️ Cumhurbaşkanı Yardımcısı Fuat Oktay: "e-Devlette yeni bir devrim olacak blokzincir tabanlı bir giriş sistemini 'dijital kimliği' getiriyoruz.
+                </span>
+
+                <img 
+                    src="https://fastly.picsum.photos/id/122/4147/2756.jpg?hmac=-B_1uAvYufznhjeA9xSSAJjqt07XrVzDWCf5VDNX0pQ" 
+                    alt="image" 
+                    id="image" 
+                    crossorigin="anonymous"
+                    onclick="file.click()"
+                />
+
+            </div>
+        </div>
+
+
+
+        <script src="doc/script.js"></script>
+    </body>
+</html>
