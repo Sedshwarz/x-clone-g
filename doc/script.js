@@ -29,6 +29,12 @@ const img = document.querySelector("#image"),
     function addEmoji(thisItem){
         document.execCommand('inserttext', false, thisItem.innerText);
     }
+
+    icerik.addEventListener('paste', function(e) {
+        e.preventDefault();
+        var text = (e.clipboardData || window.clipboardData).getData('text');
+        document.execCommand('insertText', false, text);
+    });
     
     var generate = () => {
         
@@ -45,12 +51,6 @@ const img = document.querySelector("#image"),
     
        document.querySelector(".right").classList.remove("right-sc");
     }
-
-    icerik.addEventListener('paste', function(e) {
-        e.preventDefault();
-        var text = (e.clipboardData || window.clipboardData).getData('text');
-        document.execCommand('insertText', false, text);
-    });
     
     /*
     function changeContent() {
