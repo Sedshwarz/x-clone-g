@@ -4,6 +4,7 @@ const img = document.querySelector("#image"),
     content = document.querySelector("#content"),
     icerik = document.querySelector("#icerik"),
     thmBtns = document.querySelectorAll(".thmBtn"),
+    navbar = document.querySelector(".navbar"),
     post = document.querySelector(".right"),
     logo = document.querySelector(".right").querySelector("img");
 
@@ -35,6 +36,10 @@ const img = document.querySelector("#image"),
         var text = (e.clipboardData || window.clipboardData).getData('text');
         document.execCommand('insertText', false, text);
     });
+
+    function toggleNavBar(){
+        navbar.classList.toggle("activeBar");
+    }
     
     var generate = () => {
         
@@ -51,22 +56,6 @@ const img = document.querySelector("#image"),
     
        document.querySelector(".right").classList.remove("right-sc");
     }
-    
-    /*
-    function changeContent() {
-        icerik.innerText = content.value;
-    };
-    */
-    
-    
-    /*
-    var setTheme = (ths, clr) => {
-        for (var i = 0; i < 4; i++) { thmBtns[i].classList.remove("active") };
-        ths.classList.add("active");
-        document.querySelector(":root").style.setProperty('--theme', clr);
-    }
-    */
-    
 
 
 
