@@ -263,7 +263,7 @@ body{
         flex-direction: column;
         justify-content: flex-start;
         gap: 40px;
-        padding: 10px 7px 0 7px;
+        padding: 80px 7px 0 7px;
     }
 
     .left{
