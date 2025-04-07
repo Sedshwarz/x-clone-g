@@ -34,8 +34,6 @@
                     <button onclick="addEmoji(this)">🤝</button>
                     <button onclick="addEmoji(this)">▶</button>
                     <button onclick="addEmoji(this)">♦</button>
-                    <button onclick="addEmoji(this)">◼</button>
-                    <button onclick="addEmoji(this)">🏆</button>
                     <button onclick="addEmoji(this)">👉</button>
                     <button onclick="addEmoji(this)">🎯</button>
                     <button onclick="addEmoji(this)">📌</button>
@@ -49,6 +47,14 @@
                     <button onclick="addEmoji(this)">💰</button>
                     <button onclick="addEmoji(this)">❗</button>
                     <button onclick="addEmoji(this)">✳️</button>
+		                <button onclick="addEmoji(this)">😄</button>
+                    <button onclick="addEmoji(this)">😂</button>
+
+		                <button onclick="document.execCommand('hiliteColor',false,colorInput.value)">🎨</button>
+		                <button onclick="document.execCommand('underline')"><u>U</u></button>
+		                <button onclick="document.execCommand('strikeThrough')"><s>T</s></button>
+		                <button onclick="document.execCommand('italic')"><i>I</i></button>
+		                <button onclick="document.execCommand('bold')"><b>B</b></button>
                 </div>
                 <input type="color" id="textClr" oninput="changeTextColor()" />
                 <input type="file" id="file" onChange="changeImage(this)">
