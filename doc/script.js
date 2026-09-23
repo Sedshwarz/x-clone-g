@@ -2,37 +2,42 @@ var generate = async () => {
     document.querySelector(".right").classList.add("right-sc");
     
     try {
-        const canvas = await html2canvas(post, { backgroundColor: "#101125" });
+        const canvas = await html2canvas(post, { 
+            backgroundColor: "#101125",
+            scale: 1.5,
+            useCORS: true 
+        });
         
         canvas.toBlob(async function(blob) {
             const file = new File([blob], 'post.png', { type: 'image/png' });
-            const filesArray = [file];
-
-            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+            
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 try {
                     await navigator.share({
-                        files: filesArray,
+                        files: [file],
                         title: 'Oluşturulan Görsel'
                     });
                 } catch (error) {
-                    console.log('Paylaşım iptal edildi veya desteklenmiyor:', error);
+                    console.error('Paylaşım iptal edildi:', error);
                 }
             } else {
-                var link = document.createElement("a");
-                document.body.appendChild(link);
+                const dataUrl = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = dataUrl;
                 link.download = 'post.png';
-                link.href = canvas.toDataURL();
+                link.target = "_blank";
+                document.body.appendChild(link);
                 link.click();
                 link.remove();
             }
-        }, 'image/png');
+        }, 'image/png', 0.9);
 
     } catch (error) {
-        console.error("Görsel oluşturulurken bir hata oluştu:", error);
+        console.error("Görsel oluşturulurken hata:", error);
     } finally {
         document.querySelector(".right").classList.remove("right-sc");
     }
-}
+};
     
 
 
