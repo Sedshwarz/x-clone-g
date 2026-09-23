@@ -1,34 +1,38 @@
-var generate = () => {
-        
+var generate = async () => {
     document.querySelector(".right").classList.add("right-sc");
     
-    html2canvas(post, { backgroundColor: "#101125" }).then(function (canvas) {
-        var link = document.createElement("a");
-        document.body.appendChild(link);
-        link.download = 'post.png';
-        link.href = canvas.toDataURL();
-        link.click();
-        link.delete;
-    });
-    
-   document.querySelector(".right").classList.remove("right-sc");
-}
+    try {
+        const canvas = await html2canvas(post, { backgroundColor: "#101125" });
+        
+        canvas.toBlob(async function(blob) {
+            const file = new File([blob], 'post.png', { type: 'image/png' });
+            const filesArray = [file];
 
+            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+                try {
+                    await navigator.share({
+                        files: filesArray,
+                        title: 'Oluşturulan Görsel'
+                    });
+                } catch (error) {
+                    console.log('Paylaşım iptal edildi veya desteklenmiyor:', error);
+                }
+            } else {
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = 'post.png';
+                link.href = canvas.toDataURL();
+                link.click();
+                link.remove();
+            }
+        }, 'image/png');
 
-    /*
-    function changeContent() {
-        icerik.innerText = content.value;
-    };
-    */
-    
-    
-    /*
-    var setTheme = (ths, clr) => {
-        for (var i = 0; i < 4; i++) { thmBtns[i].classList.remove("active") };
-        ths.classList.add("active");
-        document.querySelector(":root").style.setProperty('--theme', clr);
+    } catch (error) {
+        console.error("Görsel oluşturulurken bir hata oluştu:", error);
+    } finally {
+        document.querySelector(".right").classList.remove("right-sc");
     }
-    */
+}
     
 
 
